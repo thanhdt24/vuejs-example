@@ -10,7 +10,10 @@
   "dependencies": {
     "bootstrap": "^4.6.0",
     "core-js": "^3.8.3",
+    "docxtemplater": "^3.31.0",
+    "file-saver": "^2.0.5",
     "jquery": "^3.6.0",
+    "pizzip": "^3.1.1",
     "popper.js": "^1.16.1",
     "vue": "^3.2.13",
     "vue-router": "^4.0.16"
