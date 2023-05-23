@@ -21,11 +21,18 @@
         <span class="font-weight-bold">Hợp đồng lao động</span>
       </label>
     </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="hdctv"
+             v-model="docType">
+      <label class="form-check-label" for="inlineRadio4">
+        <span class="font-weight-bold">Hợp đồng cộng tác viên</span>
+      </label>
+    </div>
   </div>
   <div v-if="docType === 'bao_mat'" class="mb-3">
     <div class="input-group mb-3">
       <label for="inputCreateDate" class="input-group-text">Ngày tạo hợp đồng</label>
-      <input type="text" class="form-control" id="inputCreateDate" placeholder="01/01/2022" v-model="create_date">
+      <input type="text" class="form-control" id="inputCreateDate" placeholder="01/01/2023" v-model="create_date">
     </div>
     <div class="input-group mb-3">
       <label for="inputName" class="input-group-text">Người lao động</label>
@@ -38,7 +45,7 @@
     </div>
     <div class="input-group mb-3">
       <label for="inputPassportDate" class="input-group-text">Ngày cấp</label>
-      <input type="text" class="form-control" id="inputPassportDate" placeholder="01/01/2022"
+      <input type="text" class="form-control" id="inputPassportDate" placeholder="01/01/2023"
              v-model="partport_create_date">
     </div>
     <div class="input-group mb-3">
@@ -64,14 +71,14 @@
   <div v-if="docType === 'hdtv'" class="mb-3">
     <div class="input-group mb-3">
       <label for="inputContractCode" class="input-group-text">Số hợp đồng</label>
-      <input type="text" class="form-control mr-3" id="inputContractCode" placeholder="0407/2022/NTN"
+      <input type="text" class="form-control mr-3" id="inputContractCode" placeholder="0407/2023/NTN"
              v-model="contract_code">
       <label for="inputDay" class="input-group-text">Ngày</label>
       <input type="number" class="form-control mr-3" id="inputDay" placeholder="04" v-model="day">
       <label for="inputMonth" class="input-group-text">Tháng</label>
       <input type="number" class="form-control mr-3" id="inputMonth" placeholder="07" v-model="month">
       <label for="inputYear" class="input-group-text">Năm</label>
-      <input type="number" class="form-control" id="inputYear" placeholder="2022" v-model="year">
+      <input type="number" class="form-control" id="inputYear" placeholder="2023" v-model="year">
     </div>
     <div class="input-group mb-3">
       <label for="inputEmployee" class="input-group-text">Người lao động</label>
@@ -130,7 +137,7 @@
       <input type="number" class="form-control mr-3" id="inputContractPeriod" placeholder="2"
              v-model="contract_period">
       <label for="inputExpirationDate" class="input-group-text">Ngày hết hạn hợp đồng</label>
-      <input type="text" class="form-control" id="inputExpirationDate" placeholder="03/09/2022"
+      <input type="text" class="form-control" id="inputExpirationDate" placeholder="03/09/2023"
              v-model="expiration_date">
     </div>
     <div class="input-group mb-3">
@@ -190,14 +197,14 @@
   <div v-if="docType === 'hdld'" class="mb-3">
     <div class="input-group mb-3">
       <label for="inputContractCodeLD" class="input-group-text">Số hợp đồng</label>
-      <input type="text" class="form-control mr-3" id="inputContractCodeLD" placeholder="3105/2022/NTTL"
+      <input type="text" class="form-control mr-3" id="inputContractCodeLD" placeholder="3105/2023/NTTL"
              v-model="contract_code_ld">
       <label for="inputDayLD" class="input-group-text">Ngày bắt đầu</label>
       <input type="number" class="form-control mr-3" id="inputDayLD" placeholder="01" v-model="day_ld">
       <label for="inputMonthLD" class="input-group-text">Tháng</label>
       <input type="number" class="form-control mr-3" id="inputMonthLD" placeholder="01" v-model="month_ld">
       <label for="inputYearLD" class="input-group-text">Năm</label>
-      <input type="number" class="form-control" id="inputYearLD" placeholder="2022" v-model="year_ld">
+      <input type="number" class="form-control" id="inputYearLD" placeholder="2023" v-model="year_ld">
     </div>
     <div class="input-group mb-3">
       <label for="inputEmployeeLD" class="input-group-text">Người lao động</label>
@@ -263,7 +270,7 @@
       <label for="inputMonthEndLD" class="input-group-text">Tháng</label>
       <input type="number" class="form-control mr-3" id="inputMonthEndLD" placeholder="07" v-model="month_end_ld">
       <label for="inputYearEndLD" class="input-group-text">Năm</label>
-      <input type="number" class="form-control" id="inputYearEndLD" placeholder="2022" v-model="year_end_ld">
+      <input type="number" class="form-control" id="inputYearEndLD" placeholder="2023" v-model="year_end_ld">
     </div>
     <div class="input-group mb-3">
       <label for="inputWorkTimeLD" class="input-group-text">Thời gian làm việc</label>
@@ -303,6 +310,89 @@
         Render file
       </button>
       <button type="submit" class="btn btn-warning" @click="resetEmploymentContractsData()">
+        Reset data
+      </button>
+    </div>
+  </div>
+
+  <div v-if="docType === 'hdctv'" class="mb-3">
+    <div class="input-group mb-3">
+      <label for="inputContractCode" class="input-group-text">Số hợp đồng</label>
+      <input type="text" class="form-control mr-3" id="inputContractCode" placeholder="1403"
+             v-model="contract_code">
+      <label for="inputContractCodeLD" class="input-group-text">Họ tên (viết tắt)</label>
+      <input type="text" class="form-control mr-3" id="inputContractCodeLD" placeholder="VTTH"
+             v-model="contract_code_ld">
+      <label for="inputDayLD" class="input-group-text">Ngày bắt đầu</label>
+      <input type="number" class="form-control mr-3" id="inputDayLD" placeholder="01" v-model="day_ld">
+      <label for="inputMonthLD" class="input-group-text">Tháng</label>
+      <input type="number" class="form-control mr-3" id="inputMonthLD" placeholder="01" v-model="month_ld">
+      <label for="inputYearLD" class="input-group-text">Năm</label>
+      <input type="number" class="form-control" id="inputYearLD" placeholder="2023" v-model="year_ld">
+    </div>
+    <div class="input-group mb-3">
+      <label for="inputEmployeeLD" class="input-group-text">Người lao động</label>
+      <input type="text" class="form-control mr-3" id="inputEmployeeLD" placeholder="Nguyễn Thị A"
+             v-model="employee_ld">
+      <label for="inputBirthDateLD" class="input-group-text">Ngày sinh</label>
+      <input type="text" class="form-control mr-3" id="inputBirthDateLD" placeholder="01/01/2001"
+             v-model="birthdate_ld">
+      <label for="inputEducationLD" class="input-group-text">Trình độ học vấn</label>
+      <input type="text" class="form-control" id="inputEducationLD" placeholder="Đại học"
+             v-model="education_ld">
+    </div>
+    <div class="input-group mb-3">
+      <label for="inputPermanentResidenceLD" class="input-group-text">Hộ khẩu thường trú</label>
+      <input type="text" class="form-control mr-3" id="inputPermanentResidenceLD"
+             placeholder="Số 6, ngách 296/87, ngõ 296, Lĩnh Nam, Hoàng Mai"
+             v-model="permanent_residence_ld">
+      <label for="inputAddressLD" class="input-group-text">Nơi ở hiện tại</label>
+      <input type="text" class="form-control" id="inputAddressLD"
+             placeholder="Số 6, ngách 296/87, ngõ 296, Lĩnh Nam, Hoàng Mai"
+             v-model="address_ld">
+    </div>
+    <div class="input-group mb-3">
+      <label for="inputIdCardNumberLD" class="input-group-text">Số CMND</label>
+      <input type="number" class="form-control mr-3" id="inputIdCardNumberLD" placeholder="1258526820000"
+             v-model="id_card_number_ld">
+      <label for="inputIdCardDateLD" class="input-group-text">Ngày cấp</label>
+      <input type="text" class="form-control mr-3" id="inputIdCardDateLD" placeholder="01/01/2011"
+             v-model="id_card_date_ld">
+      <label for="inputIdCardAddressLD" class="input-group-text">Cấp tại</label>
+      <input type="text" class="form-control" id="inputIdCardAddressLD"
+             placeholder="Cục Cảnh sát"
+             v-model="id_card_address_ld">
+    </div>
+    <div class="input-group mb-3">
+      <label for="inputEmailLD" class="input-group-text">Email</label>
+      <input type="text" class="form-control mr-3" id="inputEmailLD" placeholder="abc123@gmail.com"
+             v-model="email_ld">
+      <label for="inputPhoneLD" class="input-group-text">SĐT</label>
+      <input type="text" class="form-control" id="inputPhoneLD" placeholder="0987654321"
+             v-model="phone_ld">
+    </div>
+    <div class="input-group mb-3">
+      <label for="inputDayEndLD" class="input-group-text">Ngày hết hạn</label>
+      <input type="number" class="form-control mr-3" id="inputDayEndLD" placeholder="13" v-model="day_end_ld">
+      <label for="inputMonthEndLD" class="input-group-text">Tháng</label>
+      <input type="number" class="form-control mr-3" id="inputMonthEndLD" placeholder="06" v-model="month_end_ld">
+      <label for="inputYearEndLD" class="input-group-text">Năm</label>
+      <input type="number" class="form-control" id="inputYearEndLD" placeholder="2023" v-model="year_end_ld">
+    </div>
+    <div class="input-group mb-3">
+      <label for="inputWorkTimeLD" class="input-group-text">Thời hạn</label>
+      <input type="text" class="form-control mr-3" id="inputWorkTimeLD"
+             placeholder="(+3 tháng -1 ngày)"
+             v-model="duration_date">
+      <label for="inputSalaryLD" class="input-group-text">Mức lương</label>
+      <input type="text" class="form-control" id="inputSalaryLD" placeholder="50.000 VNĐ/ca 30 phút"
+             v-model="salary_ld">
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary mr-3" @click="renderCollaboratorsContracts">
+        Render file
+      </button>
+      <button type="submit" class="btn btn-warning" @click="resetCollaboratorsContractsData()">
         Reset data
       </button>
     </div>
@@ -380,6 +470,7 @@ let costume_allowance_ld;
 let fuel_allowance_ld;
 let rules_compliance_bonus_ld;
 let reward_complete_task_ld;
+let duration_date;
 export default {
   name: "init-docx",
   data() {
@@ -449,7 +540,8 @@ export default {
       costume_allowance_ld: '',
       fuel_allowance_ld: '',
       rules_compliance_bonus_ld: '',
-      reward_complete_task_ld: ''
+      reward_complete_task_ld: '',
+      duration_date: ''
     }
   },
   methods: {
@@ -661,6 +753,72 @@ export default {
       );
     },
 
+    renderCollaboratorsContracts() {
+      contract_code = this.contract_code === '' ? '.....' : this.contract_code;
+      contract_code_ld = this.contract_code_ld === '' ? '.....' : this.contract_code_ld;
+      day_ld = this.day_ld === '' ? '...' : this.day_ld;
+      month_ld = this.month_ld === '' ? '...' : this.month_ld;
+      year_ld = this.year_ld === '' ? '...' : this.year_ld;
+      employee_ld = this.employee_ld === '' ? '................' : this.employee_ld;
+      birthdate_ld = this.birthdate_ld === '' ? '...............' : this.birthdate_ld;
+      education_ld = this.education_ld === '' ? '...............' : this.education_ld;
+      permanent_residence_ld = this.permanent_residence_ld === '' ? '..............................................' : this.permanent_residence_ld;
+      address_ld = this.address_ld === '' ? '..............................................' : this.address_ld;
+      id_card_number_ld = this.id_card_number_ld === '' ? '.............' : this.id_card_number_ld;
+      id_card_date_ld = this.id_card_date_ld === '' ? '.............' : this.id_card_date_ld;
+      id_card_address_ld = this.id_card_address_ld === '' ? '..............................................' : this.id_card_address_ld;
+      email_ld = this.email_ld === '' ? '..............................................' : this.email_ld;
+      phone_ld = this.phone_ld === '' ? '..............................................' : this.phone_ld;
+      day_end_ld = this.day_end_ld === '' ? '.....' : this.day_end_ld;
+      month_end_ld = this.month_end_ld === '' ? '.....' : this.month_end_ld;
+      year_end_ld = this.year_end_ld === '' ? '.....' : this.year_end_ld;
+      duration_date = this.duration_date === '' ? ".................." : this.duration_date;
+      salary_ld = this.salary_ld === '' ? '.............................................' : this.salary_ld;
+      PizZipUtils.getBinaryContent(
+          'ReportTemplates/hop_dong_cong_tac_vien_template.docx',
+          function (error, content) {
+            if (error) {
+              throw error;
+            }
+            const zip = new PizZip(content);
+            const doc = new DocxTemplate(zip, {
+              paragraphLoop: true,
+              linebreaks: true,
+            });
+
+            doc.render({
+              contract_code: contract_code,
+              contract_code_ld: contract_code_ld,
+              day_ld: day_ld,
+              month_ld: month_ld,
+              year_ld: year_ld,
+              employee: employee_ld,
+              birthdate: birthdate_ld,
+              education: education_ld,
+              permanent_residence: permanent_residence_ld,
+              address: address_ld,
+              id_card_number: id_card_number_ld,
+              id_card_date: id_card_date_ld,
+              id_card_address: id_card_address_ld,
+              email: email_ld,
+              phone: phone_ld,
+              day_end_ld: day_end_ld,
+              month_end_ld: month_end_ld,
+              year_end_ld: year_end_ld,
+              duration_date: duration_date,
+              salary: salary_ld,
+            });
+
+            const out = doc.getZip().generate({
+              type: "blob",
+              mimeType: "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+            });
+
+            saveAs(out, "hop_dong_cong_tac_vien_" + employee_ld + ".docx");
+          }
+      );
+    },
+
     resetSecurityData() {
       this.create_date = '';
       this.name = '';
@@ -731,6 +889,29 @@ export default {
       this.fuel_allowance_ld = '';
       this.rules_compliance_bonus_ld = '';
       this.reward_complete_task_ld = '';
+    },
+
+    resetCollaboratorsContractsData() {
+      this.contract_code = '';
+      this.contract_code_ld = '';
+      this.day_ld = '';
+      this.month_ld = '';
+      this.year_ld = '';
+      this.employee_ld = '';
+      this.birthdate_ld = '';
+      this.education_ld = '';
+      this.permanent_residence_ld = '';
+      this.address_ld = '';
+      this.id_card_number_ld = '';
+      this.id_card_date_ld = '';
+      this.id_card_address_ld = '';
+      this.email_ld = '';
+      this.phone_ld = '';
+      this.day_end_ld = '';
+      this.month_end_ld = '';
+      this.year_end_ld = '';
+      this.duration_date = '';
+      this.salary_ld = '';
     }
   }
 }
