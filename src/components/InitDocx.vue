@@ -385,7 +385,7 @@
              placeholder="(+3 tháng -1 ngày)"
              v-model="duration_date">
       <label for="inputSalaryLD" class="input-group-text">Mức lương</label>
-      <input type="text" class="form-control" id="inputSalaryLD" placeholder="50.000 VNĐ/ca 30 phút"
+      <input type="text" class="form-control" id="inputSalaryLD" placeholder="50.000"
              v-model="salary_ld">
     </div>
     <div class="text-center">
