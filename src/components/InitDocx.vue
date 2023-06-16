@@ -377,13 +377,7 @@
       <label for="inputMonthEndLD" class="input-group-text">Tháng</label>
       <input type="number" class="form-control mr-3" id="inputMonthEndLD" placeholder="06" v-model="month_end_ld">
       <label for="inputYearEndLD" class="input-group-text">Năm</label>
-      <input type="number" class="form-control" id="inputYearEndLD" placeholder="2023" v-model="year_end_ld">
-    </div>
-    <div class="input-group mb-3">
-      <label for="inputWorkTimeLD" class="input-group-text">Thời hạn</label>
-      <input type="text" class="form-control mr-3" id="inputWorkTimeLD"
-             placeholder="(+3 tháng -1 ngày)"
-             v-model="duration_date">
+      <input type="number" class="form-control mr-3" id="inputYearEndLD" placeholder="2023" v-model="year_end_ld">
       <label for="inputSalaryLD" class="input-group-text">Mức lương</label>
       <input type="text" class="form-control" id="inputSalaryLD" placeholder="50.000"
              v-model="salary_ld">
@@ -470,7 +464,6 @@ let costume_allowance_ld;
 let fuel_allowance_ld;
 let rules_compliance_bonus_ld;
 let reward_complete_task_ld;
-let duration_date;
 export default {
   name: "init-docx",
   data() {
@@ -541,7 +534,6 @@ export default {
       fuel_allowance_ld: '',
       rules_compliance_bonus_ld: '',
       reward_complete_task_ld: '',
-      duration_date: ''
     }
   },
   methods: {
@@ -772,7 +764,6 @@ export default {
       day_end_ld = this.day_end_ld === '' ? '.....' : this.day_end_ld;
       month_end_ld = this.month_end_ld === '' ? '.....' : this.month_end_ld;
       year_end_ld = this.year_end_ld === '' ? '.....' : this.year_end_ld;
-      duration_date = this.duration_date === '' ? ".................." : this.duration_date;
       salary_ld = this.salary_ld === '' ? '.............................................' : this.salary_ld;
       PizZipUtils.getBinaryContent(
           'ReportTemplates/hop_dong_cong_tac_vien_template.docx',
@@ -805,7 +796,6 @@ export default {
               day_end_ld: day_end_ld,
               month_end_ld: month_end_ld,
               year_end_ld: year_end_ld,
-              duration_date: duration_date,
               salary: salary_ld,
             });
 
@@ -910,7 +900,6 @@ export default {
       this.day_end_ld = '';
       this.month_end_ld = '';
       this.year_end_ld = '';
-      this.duration_date = '';
       this.salary_ld = '';
     }
   }
