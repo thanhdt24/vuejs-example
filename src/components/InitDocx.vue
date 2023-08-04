@@ -103,7 +103,7 @@
     </div>
     <div class="input-group mb-3">
       <label for="inputIdCardNumber" class="input-group-text">Số CMND</label>
-      <input type="number" class="form-control mr-3" id="inputIdCardNumber" placeholder="1258526820000"
+      <input type="text" class="form-control mr-3" id="inputIdCardNumber" placeholder="1258526820000"
              v-model="id_card_number">
       <label for="inputIdCardDate" class="input-group-text">Ngày cấp</label>
       <input type="text" class="form-control mr-3" id="inputIdCardDate" placeholder="01/01/2011"
@@ -229,7 +229,7 @@
     </div>
     <div class="input-group mb-3">
       <label for="inputIdCardNumberLD" class="input-group-text">Số CMND</label>
-      <input type="number" class="form-control mr-3" id="inputIdCardNumberLD" placeholder="1258526820000"
+      <input type="text" class="form-control mr-3" id="inputIdCardNumberLD" placeholder="1258526820000"
              v-model="id_card_number_ld">
       <label for="inputIdCardDateLD" class="input-group-text">Ngày cấp</label>
       <input type="text" class="form-control mr-3" id="inputIdCardDateLD" placeholder="01/01/2011"
@@ -353,7 +353,7 @@
     </div>
     <div class="input-group mb-3">
       <label for="inputIdCardNumberLD" class="input-group-text">Số CMND</label>
-      <input type="number" class="form-control mr-3" id="inputIdCardNumberLD" placeholder="1258526820000"
+      <input type="text" class="form-control mr-3" id="inputIdCardNumberLD" placeholder="1258526820000"
              v-model="id_card_number_ld">
       <label for="inputIdCardDateLD" class="input-group-text">Ngày cấp</label>
       <input type="text" class="form-control mr-3" id="inputIdCardDateLD" placeholder="01/01/2011"

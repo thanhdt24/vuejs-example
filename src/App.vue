@@ -26,3 +26,12 @@ export default {
   name: "app"
 };
 </script>
+
+<style scoped>
+#app {
+  /*background-repeat: no-repeat;*/
+  /*background-image: url("../src/assets/00003.jpg");*/
+  /*min-height: 100vh;*/
+  /*background-size: auto 100%;*/
+}
+</style>
