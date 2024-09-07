@@ -10,7 +10,7 @@
   "dependencies": {
     "bootstrap": "^4.6.0",
     "core-js": "^3.8.3",
-    "docxtemplater": "^3.31.0",
+    "docxtemplater": "^3.49.2",
     "file-saver": "^2.0.5",
     "jquery": "^3.6.0",
     "pizzip": "^3.1.1",
