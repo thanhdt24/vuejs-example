@@ -12,7 +12,7 @@
     "core-js": "^3.8.3",
     "docxtemplater": "^3.31.0",
     "file-saver": "^2.0.5",
-    "jquery": "^3.6.0",
+    "jquery": "^3.7.1",
     "pizzip": "^3.1.1",
     "popper.js": "^1.16.1",
     "vue": "^3.2.13",
